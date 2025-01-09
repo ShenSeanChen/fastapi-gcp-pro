@@ -1,0 +1,23 @@
+# Python virtual environment
+venv_fastapi_gcp_pro/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+.DS_Store 
