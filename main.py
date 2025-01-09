@@ -4,8 +4,27 @@
 from fastapi import FastAPI
 from datetime import datetime
 import requests
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(title="FastAPI GCP Pro")
+
+# Define allowed origins for CORS
+origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://launch-an-app.vercel.app"
+]
+
+# Add CORS middleware to the application
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # List of allowed origins
+    allow_credentials=True,  # Allow credentials (cookies, authorization headers)
+    allow_methods=["*"],    # Allow all methods (GET, POST, etc.)
+    allow_headers=["*"],    # Allow all headers
+)
+
 
 @app.get("/")
 async def root():
